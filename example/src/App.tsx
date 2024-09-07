@@ -1,17 +1,39 @@
 import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-gy';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { GYFile ,GYToast,GYHud} from 'react-native-gy';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => {
+          GYFile.openSystemFileManager();
+        }}
+      >
+        <Text>打开文件管理器</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => {
+          GYToast.show('xxxxxx',1.5);
+        }}
+      >
+        <Text>Toast</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => {
+          GYHud.show('正在加载中...');
+          setTimeout(() => {
+            GYHud.dismiss();
+          }, 4000);
+        }}
+      >
+        <Text>Hud</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -22,9 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  btn: {
+    padding: 10,
   },
 });
