@@ -1,22 +1,29 @@
 # react-native-gy
 
-this is a lib
+react-native常用库，目前只适配iOS
+
+## 依赖
+```
+[Toaster](https://github.com/devxoul/Toaster.git)
+
+
+[SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD.git)
+```
 
 ## Installation
 
 ```sh
 npm install react-native-gy
+
+pod添加 use_frameworks!
 ```
 
 ## Usage
 
 
 ```js
-import { multiply } from 'react-native-gy';
+import { GYToast,GYHud } from 'react-native-gy';
 
-// ...
-
-const result = await multiply(3, 7);
 ```
 
 
