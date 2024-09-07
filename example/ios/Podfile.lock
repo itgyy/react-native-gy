@@ -1,8 +1,48 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.75.2)
   - fmt (9.1.0)
+  - GKCover (3.0.1)
+  - GKLivePhotoManager (1.0.2)
+  - GKPhotoBrowser (3.1.0):
+    - GKPhotoBrowser/Default (= 3.1.0)
+  - GKPhotoBrowser/AF (3.1.0):
+    - AFNetworking
+    - GKLivePhotoManager
+    - GKPhotoBrowser/Core
+  - GKPhotoBrowser/AVPlayer (3.1.0):
+    - GKPhotoBrowser/Core
+  - GKPhotoBrowser/Core (3.1.0):
+    - GKPhotoBrowser/Resources
+  - GKPhotoBrowser/Default (3.1.0):
+    - GKPhotoBrowser/AF
+    - GKPhotoBrowser/AVPlayer
+    - GKPhotoBrowser/Progress
+    - GKPhotoBrowser/SD
+  - GKPhotoBrowser/Progress (3.1.0):
+    - GKPhotoBrowser/Core
+    - GKSliderView
+  - GKPhotoBrowser/Resources (3.1.0)
+  - GKPhotoBrowser/SD (3.1.0):
+    - GKPhotoBrowser/Core
+    - SDWebImage (~> 5.0)
+  - GKSliderView (1.2.2)
   - glog (0.3.5)
   - hermes-engine (0.75.2):
     - hermes-engine/Pre-built (= 0.75.2)
@@ -1329,6 +1369,8 @@ PODS:
     - Yoga
   - react-native-gy/PhotoBowser (0.1.0):
     - DoubleConversion
+    - GKCover
+    - GKPhotoBrowser
     - glog
     - hermes-engine
     - RCT-Folly (= 2024.01.01.00)
@@ -1630,6 +1672,9 @@ PODS:
     - React-logger (= 0.75.2)
     - React-perflogger (= 0.75.2)
     - React-utils (= 0.75.2)
+  - SDWebImage (5.19.7):
+    - SDWebImage/Core (= 5.19.7)
+  - SDWebImage/Core (5.19.7)
   - SocketRocket (0.7.0)
   - SVProgressHUD (2.3.1):
     - SVProgressHUD/Core (= 2.3.1)
@@ -1706,6 +1751,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - AFNetworking
+    - GKCover
+    - GKLivePhotoManager
+    - GKPhotoBrowser
+    - GKSliderView
+    - SDWebImage
     - SocketRocket
     - SVProgressHUD
     - Toaster
@@ -1840,10 +1891,15 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   boost: 4cb898d0bf20404aab1850c656dcea009429d6c1
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 38bb611218305c3bc61803e287b8a81c6f63b619
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
+  GKCover: 6486cf87c0a5cae4bb5c3a09e17925ad8b466412
+  GKLivePhotoManager: 203a3fc08563511b961c686e543d5560fa801331
+  GKPhotoBrowser: 361d4dd8b39b254b55f99ec374a7fe926c108557
+  GKSliderView: 94fab41465f2ba543200f04bee401020beab4041
   glog: 69ef571f3de08433d766d614c73a9838a06bf7eb
   hermes-engine: 3b6e0717ca847e2fc90a201e59db36caf04dee88
   RCT-Folly: 4464f4d875961fce86008d45f4ecf6cef6de0740
@@ -1875,7 +1931,7 @@ SPEC CHECKSUMS:
   React-logger: 8db32983d75dc2ad54f278f344ccb9b256e694fc
   React-Mapbuffer: db173bede5ac5cb1c82d4a6a8597477ba87c5648
   React-microtasksnativemodule: 0c1d7b6f26fbeae097279569cf2430255fa3d3a9
-  react-native-gy: 397579c687f71aa4e810c6acfaceb8035b0e622b
+  react-native-gy: 4e1f6ace074c196546583206fc97fab535e6ecc3
   React-nativeconfig: 5fc2b05a590eb704128f5a4fc8ea6fa7b847e6e8
   React-NativeModulesApple: 88313414ddffd1758f76042733e8f0297acfd502
   React-perflogger: 8a360ccf603de6ddbe9ff8f54383146d26e6c936
@@ -1902,6 +1958,7 @@ SPEC CHECKSUMS:
   React-utils: f908da1113885e2c08b25247e0ea892c68e2eaf6
   ReactCodegen: de94475c4712a61ba0b1e1c25eb54db32f56836d
   ReactCommon: 8da2bad9c1e5901f7b5484e42e59578edeece142
+  SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987

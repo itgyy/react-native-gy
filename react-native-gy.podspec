@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.platforms    = { :ios => min_ios_version_supported }
   s.source       = { :git => "https://github.com/itgyy/react-native-gy.git", :tag => "#{s.version}" }
-
+  s.static_framework = true
 
   # Core
   s.subspec "Core" do |ss|
@@ -28,6 +28,8 @@ Pod::Spec.new do |s|
   # PhotoBowser
   s.subspec "PhotoBowser" do |ss|
     ss.source_files = "ios/PhotoBowser/*.{h,m,mm,swift}"
+    ss.dependency "GKPhotoBrowser"
+    ss.dependency "GKCover"
   end
 
   s.subspec "Toast" do |ss|
