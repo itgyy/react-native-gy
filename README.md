@@ -3,12 +3,8 @@
 react-native常用库，目前只适配iOS
 
 ## 依赖
-```
 [Toaster](https://github.com/devxoul/Toaster.git)
-
-
 [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD.git)
-```
 
 ## Installation
 
