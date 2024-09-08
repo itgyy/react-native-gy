@@ -9,29 +9,27 @@ import Foundation
 
 @objc(GYHud)
 class GYHud: NSObject {
-    
     override init() {
-        SVProgressHUD.setDefaultStyle(.dark);
-        SVProgressHUD.setDefaultMaskType(.clear);
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.setDefaultAnimationType(.native)
-        SVProgressHUD.setMinimumSize(CGSizeMake(120, 120));
+        SVProgressHUD.setMinimumSize(CGSizeMake(120, 120))
     }
-    
+
     @objc(show)
     func show() {
         DispatchQueue.main.async {
             SVProgressHUD.show()
         }
     }
-    
-    
+
     @objc(showStatus:)
-    func showStatus(status:String) {
+    func showStatus(status: String) {
         DispatchQueue.main.async {
             SVProgressHUD.show(withStatus: status)
         }
     }
-    
+
     @objc(dismiss)
     func dismiss() {
         DispatchQueue.main.async {

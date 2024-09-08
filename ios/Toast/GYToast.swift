@@ -10,6 +10,11 @@ import Toaster
 @objc(GYToast)
 class GYToast: NSObject {
     
+    override init() {
+        ToastView.appearance().font = UIFont.systemFont(ofSize: 14);
+        ToastView.appearance().maxWidthRatio = 0.8;
+    }
+    
     @objc(show:duration:)
     func show(msg:NSString,duration:CGFloat) -> Void {
         DispatchQueue.main.async {

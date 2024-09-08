@@ -1293,7 +1293,7 @@ PODS:
     - react-native-gy/Core (= 0.1.0)
     - react-native-gy/File (= 0.1.0)
     - react-native-gy/Hud (= 0.1.0)
-    - react-native-gy/PhotoBowser (= 0.1.0)
+    - react-native-gy/PhotoBrowser (= 0.1.0)
     - react-native-gy/Toast (= 0.1.0)
     - React-NativeModulesApple
     - React-RCTFabric
@@ -1367,7 +1367,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SVProgressHUD
     - Yoga
-  - react-native-gy/PhotoBowser (0.1.0):
+  - react-native-gy/PhotoBrowser (0.1.0):
     - DoubleConversion
     - GKCover
     - GKPhotoBrowser
@@ -1931,7 +1931,7 @@ SPEC CHECKSUMS:
   React-logger: 8db32983d75dc2ad54f278f344ccb9b256e694fc
   React-Mapbuffer: db173bede5ac5cb1c82d4a6a8597477ba87c5648
   React-microtasksnativemodule: 0c1d7b6f26fbeae097279569cf2430255fa3d3a9
-  react-native-gy: 4e1f6ace074c196546583206fc97fab535e6ecc3
+  react-native-gy: 13be64baea317eb9686ff7cfdd40485ee4a320b8
   React-nativeconfig: 5fc2b05a590eb704128f5a4fc8ea6fa7b847e6e8
   React-NativeModulesApple: 88313414ddffd1758f76042733e8f0297acfd502
   React-perflogger: 8a360ccf603de6ddbe9ff8f54383146d26e6c936

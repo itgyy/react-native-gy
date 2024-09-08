@@ -7,7 +7,7 @@ RCT_EXTERN_METHOD(show:(NSString*)msg duration:(CGFloat)duration)
 
 + (BOOL)requiresMainQueueSetup
 {
-  return NO;
+  return YES;
 }
 
 @end
