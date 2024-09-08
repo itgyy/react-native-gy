@@ -5,6 +5,7 @@ react-native常用库，目前只适配iOS
 ## 依赖
 [Toaster](https://github.com/devxoul/Toaster.git)
 [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD.git)
+[GKPhotoBrowser](https://github.com/QuintGao/GKPhotoBrowser)
 
 ## Installation
 
@@ -18,9 +19,10 @@ pod添加 use_frameworks!
 
 
 ```js
-import { GYToast,GYHud } from 'react-native-gy';
+import { GYFile,GYToast,GYHud,GYPhotoBrowser } from 'react-native-gy';
 
 ```
+详细用法请参考example
 
 
 ## Contributing
