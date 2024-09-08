@@ -95,5 +95,10 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+  implementation 'com.orhanobut:logger:2.2.0'
+  //Toast
+  implementation 'com.github.getActivity:Toaster:12.6'
+
 }
 

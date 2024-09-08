@@ -116,4 +116,7 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+  implementation 'com.orhanobut:logger:2.2.0'
+  implementation 'com.github.getActivity:Toaster:12.6'
 }

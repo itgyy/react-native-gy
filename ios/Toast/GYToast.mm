@@ -3,7 +3,7 @@
 
 @interface RCT_EXTERN_MODULE(GYToast, NSObject)
 
-RCT_EXTERN_METHOD(show:(NSString*)msg duration:(CGFloat)duration)
+RCT_EXTERN_METHOD(show:(NSString*)msg)
 
 + (BOOL)requiresMainQueueSetup
 {

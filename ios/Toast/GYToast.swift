@@ -15,11 +15,11 @@ class GYToast: NSObject {
         ToastView.appearance().maxWidthRatio = 0.8;
     }
     
-    @objc(show:duration:)
-    func show(msg:NSString,duration:CGFloat) -> Void {
+    @objc(show:)
+    func show(msg:NSString) -> Void {
         DispatchQueue.main.async {
             ToastCenter.default.cancelAll()
-            Toast(text:msg as String,duration: duration).show();
+            Toast(text:msg as String,duration: 2).show();
         }
     }
 

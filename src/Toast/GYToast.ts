@@ -6,8 +6,8 @@ const GYToast = {
    * Toast
    * @returns
    */
-  show(msg: string, duration: number) {
-    return manager.show(msg, duration);
+  show(msg: string) {
+    return manager.show(msg);
   },
 };
 export default GYToast;

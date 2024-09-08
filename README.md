@@ -1,16 +1,16 @@
 # react-native-gy
 react-native常用库（Toast,Hud,File,图片大图视频预览）
-> 原生库(目前只适配iOS)
-- [GYFile](README_File.md): 打开系统文件管理器
-- GYToast: Toast提示
-- GYHud: 加载提示
-- GYPhotoBrowser: 图片视频预览器
+> 原生库
+- [GYFile](README_File.md): 打开系统文件管理器(ios,android)
+- [GYToast](README_Toast.md): Toast提示(ios,android)
+- GYHud: 加载提示(ios)
+- GYPhotoBrowser: 图片视频预览器(ios)
 
-## 依赖
+<!-- ## 依赖
 > iOS
 - [Toaster](https://github.com/devxoul/Toaster)
 - [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)
-- [GKPhotoBrowser](https://github.com/QuintGao/GKPhotoBrowser)
+- [GKPhotoBrowser](https://github.com/QuintGao/GKPhotoBrowser) -->
 
 ## 安装
 ```

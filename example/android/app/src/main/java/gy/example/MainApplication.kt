@@ -10,6 +10,13 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
+import com.gy.Toast.GYToast
+import com.hjq.toast.Toaster
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.FormatStrategy
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.PrettyFormatStrategy
+
 
 class MainApplication : Application(), ReactApplication {
 
@@ -34,6 +41,17 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+    val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
+      .showThreadInfo(false) // (Optional) Whether to show thread info or not. Default true
+      .methodCount(0) // (Optional) How many method line to show. Default 2
+      .methodOffset(7) // (Optional) Hides internal method calls up to offset. Default 5
+      .tag("CUSTOM") // (Optional) Global tag for every log. Default PRETTY_LOGGER
+      .build()
+    Logger.addLogAdapter(AndroidLogAdapter(formatStrategy));
+
+    Logger.d(this)
+    GYToast.init(this);
+
     SoLoader.init(this, false)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
