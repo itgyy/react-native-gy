@@ -6,6 +6,7 @@ import {
   GYHud,
   GYPhotoBrowser,
   type GYPhotoBrowserAction,
+  GYToastDuration,
 } from 'react-native-gy';
 
 export default function App() {
@@ -41,7 +42,7 @@ export default function App() {
       <TouchableOpacity
         style={styles.btn}
         onPress={() => {
-          GYToast.show('xxxxxx', 1.5);
+          GYToast.show('xxxxxx', GYToastDuration.SHORT);
         }}
       >
         <Text>Toast</Text>

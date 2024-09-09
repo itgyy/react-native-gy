@@ -38,9 +38,9 @@ class GYToast (reactContext: ReactApplicationContext) :
   }
 
   @ReactMethod
-  fun show(msg:String){
+  fun show(msg:String,duration:Int){
     val params = ToastParams();
-    params.duration = Toast.LENGTH_SHORT;
+    params.duration = duration == 0 ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG;
     params.crossPageShow = false;
     params.text = msg;
     Toaster.setGravity(Gravity.BOTTOM,0,60)
