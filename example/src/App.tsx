@@ -1,85 +1,49 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import {
-  GYFile,
-  GYToast,
-  GYHud,
-  GYPhotoBrowser,
-  type GYPhotoBrowserAction,
-  GYToastDuration,
-} from 'react-native-gy';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
+import APage from './pages/APage';
+import FilePage from './pages/FilePage';
+import ToastPage from './pages/ToastPage';
+import HudPage from './pages/HudPage';
+import PhotoBrowserPage from './pages/PhotoBrowserPage';
+import RefreshPage from './pages/RefreshPage';
 
 export default function App() {
-  const photpBrowser = useRef<GYPhotoBrowserAction>(null);
-  const imgs = useMemo(() => {
-    return [
-      {
-        url: 'https://n1.itc.cn/img8/wb/recom/2016/08/28/147234686090676539.JPEG',
-        videoUrl: '',
-      },
-      {
-        url: 'https://img1.baidu.com/it/u=2693733305,4035903587&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1200',
-        videoUrl: '',
-      },
-      {
-        url: 'https://img1.baidu.com/it/u=2693733305,4035903587&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1200',
-        videoUrl: 'https://v-cdn.zjol.com.cn/276982.mp4',
-      },
-    ];
-  }, []);
-  useEffect(() => {}, []);
-
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => {
-          GYFile.openSystemFileManager();
-        }}
-      >
-        <Text>打开文件管理器</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => {
-          GYToast.show('xxxxxx', GYToastDuration.SHORT);
-        }}
-      >
-        <Text>Toast</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => {
-          GYHud.show('正在加载中...');
-          setTimeout(() => {
-            GYHud.dismiss();
-          }, 4000);
-        }}
-      >
-        <Text>Hud</Text>
-      </TouchableOpacity>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="index">
+        <Stack.Screen
+          name="index"
+          component={APage}
+          options={{ title: '首页', headerBackTitleVisible: false }}
+        />
+        <Stack.Screen
+          name="FilePage"
+          component={FilePage}
+          options={{ title: '文件', headerBackTitleVisible: false }}
+        />
+        <Stack.Screen
+          name="ToastPage"
+          component={ToastPage}
+          options={{ title: 'Toast', headerBackTitleVisible: false }}
+        />
+        <Stack.Screen
+          name="HudPage"
+          component={HudPage}
+          options={{ title: 'Hud', headerBackTitleVisible: false }}
+        />
 
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => {
-          photpBrowser.current?.show();
-        }}
-      >
-        <Text>图片浏览器</Text>
-      </TouchableOpacity>
-
-      <GYPhotoBrowser ref={photpBrowser} datas={imgs} index={0} />
-    </View>
+        <Stack.Screen
+          name="PhotoBrowserPage"
+          component={PhotoBrowserPage}
+          options={{ title: '图片浏览器', headerBackTitleVisible: false }}
+        />
+        <Stack.Screen
+          name="RefreshPage"
+          component={RefreshPage}
+          options={{ title: '下拉刷新', headerBackTitleVisible: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  btn: {
-    padding: 10,
-  },
-});

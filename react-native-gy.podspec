@@ -43,6 +43,12 @@ Pod::Spec.new do |s|
     ss.source_files = "ios/Hud/*.{h,m,mm,swift}"
     ss.dependency "SVProgressHUD"
   end
+
+  # Refresh
+  s.subspec "Refresh" do |ss|
+    ss.source_files = "ios/Refresh/*.{h,m,mm,swift}"
+    ss.dependency "MJRefresh"
+  end
   
   s.source_files = "ios/**/*.{h}"
 
