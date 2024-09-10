@@ -9,9 +9,9 @@
 
 @implementation RCTScrollViewManager (MJRefresh)
 
-RCT_EXPORT_VIEW_PROPERTY(enableMJRefresh, BOOL)
-RCT_EXPORT_VIEW_PROPERTY(mjRefreshing, BOOL)
-RCT_EXPORT_VIEW_PROPERTY(onMJRefresh, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(enableGYRefresh, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(refreshing, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(onGYRefresh, RCTBubblingEventBlock)
 
 
 

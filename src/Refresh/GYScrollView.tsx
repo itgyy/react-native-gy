@@ -2,9 +2,9 @@ import { Component } from 'react';
 import { ScrollView, type ScrollViewProps } from 'react-native';
 
 interface GYScrollViewProps extends ScrollViewProps {
-  enableMJRefresh?: boolean;
-  onMJRefresh?: () => void;
-  mjRefreshing?: boolean;
+  enableGYRefresh?: boolean;
+  onGYRefresh?: () => void;
+  refreshing?: boolean;
 }
 
 export default class GYScrollView extends Component<GYScrollViewProps> {

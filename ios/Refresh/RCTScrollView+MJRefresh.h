@@ -11,9 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RCTScrollView (MJRefresh)
 
 // 下拉刷新
-@property (nonatomic, assign) BOOL enableMJRefresh;
-@property (nonatomic, assign) BOOL mjRefreshing;
-@property (nonatomic, copy) RCTBubblingEventBlock onMJRefresh;
+@property (nonatomic, assign) BOOL enableGYRefresh;
+@property (nonatomic, assign) BOOL refreshing;
+@property (nonatomic, copy) RCTBubblingEventBlock onGYRefresh;
 
 
 @end

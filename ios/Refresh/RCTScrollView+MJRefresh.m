@@ -15,39 +15,39 @@
 
 #pragma mark - 自定义样式属性
 static const char GYMJScrollViewEnableRefreshKey = '\0';
-- (BOOL)enableMJRefresh {
+- (BOOL)enableGYRefresh {
     return [(NSNumber *)objc_getAssociatedObject(self, &GYMJScrollViewEnableRefreshKey)boolValue];
 }
 
-- (void)setEnableMJRefresh:(BOOL)enableMJRefresh {
+- (void)setEnableGYRefresh:(BOOL)enableGYRefresh {
     objc_setAssociatedObject(self, &GYMJScrollViewEnableRefreshKey,
-                             @(enableMJRefresh), OBJC_ASSOCIATION_RETAIN);
+                             @(enableGYRefresh), OBJC_ASSOCIATION_RETAIN);
 
     [self initHeader];
 }
 
 static const char GYMJScrollViewRefreshingKey = '\0';
-- (BOOL)mjRefreshing {
+- (BOOL)refreshing {
     return [(NSNumber *)objc_getAssociatedObject(self, &GYMJScrollViewRefreshingKey)boolValue];
 }
 
-- (void)setMjRefreshing:(BOOL)mjRefreshing {
-    if (self.mjRefreshing == mjRefreshing) {
+- (void)setRefreshing:(BOOL)refreshing {
+    if (self.refreshing == refreshing) {
         return;
     }
 
     objc_setAssociatedObject(self, &GYMJScrollViewRefreshingKey,
-                             @(mjRefreshing), OBJC_ASSOCIATION_RETAIN);
+                             @(refreshing), OBJC_ASSOCIATION_RETAIN);
     [self initHeader];
 }
 
-static const char GYMJScrollonRefreshKey = '\0';
-- (void)setOnMJRefresh:(RCTBubblingEventBlock)onMJRefresh {
-    objc_setAssociatedObject(self, &GYMJScrollonRefreshKey, onMJRefresh, OBJC_ASSOCIATION_RETAIN);
+static const char GYMJScrollOnRefreshKey = '\0';
+- (void)setOnGYRefresh:(RCTBubblingEventBlock)onGYRefresh {
+    objc_setAssociatedObject(self, &GYMJScrollOnRefreshKey, onGYRefresh, OBJC_ASSOCIATION_RETAIN);
 }
 
-- (RCTBubblingEventBlock)onMJRefresh {
-    return objc_getAssociatedObject(self, &GYMJScrollonRefreshKey);
+- (RCTBubblingEventBlock)onGYRefresh {
+    return objc_getAssociatedObject(self, &GYMJScrollOnRefreshKey);
 }
 
 /**
@@ -68,7 +68,7 @@ static const char GYMJScrollonRefreshKey = '\0';
 - (void)initHeader {
     UIScrollView *scrollView = [self getScrollView];
 
-    if (!self.enableMJRefresh) {
+    if (!self.enableGYRefresh) {
         return;
     }
 
@@ -76,7 +76,7 @@ static const char GYMJScrollonRefreshKey = '\0';
         scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshAction)];
     }
 
-    if (self.mjRefreshing) {
+    if (self.refreshing) {
         [scrollView.mj_header beginRefreshing];
     } else {
         [scrollView.mj_header endRefreshing];
@@ -84,8 +84,8 @@ static const char GYMJScrollonRefreshKey = '\0';
 }
 
 - (void)refreshAction {
-    if(self.onMJRefresh){
-        self.onMJRefresh(@{});
+    if(self.onGYRefresh){
+        self.onGYRefresh(@{});
     }
 }
 

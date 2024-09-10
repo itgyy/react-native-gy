@@ -24,7 +24,7 @@ export default function APage() {
       {Item('PhotoBrowser', () => {
         nav.navigate('PhotoBrowserPage');
       })}
-      {Item('RefreshPage', () => {
+      {Item('Refresh', () => {
         nav.navigate('RefreshPage');
       })}
     </ScrollView>
