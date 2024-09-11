@@ -7,10 +7,13 @@ import ToastPage from './pages/ToastPage';
 import HudPage from './pages/HudPage';
 import PhotoBrowserPage from './pages/PhotoBrowserPage';
 import RefreshPage from './pages/RefreshPage';
+import { StatusBar, View } from 'react-native';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <View style={{flex:1}}>
+      <StatusBar translucent={true}/>
+      <NavigationContainer>
       <Stack.Navigator initialRouteName="index">
         <Stack.Screen
           name="index"
@@ -45,5 +48,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </View>
+    
   );
 }

@@ -3,15 +3,12 @@ package com.gy.Toast
 import android.app.Application
 import android.view.Gravity
 import android.widget.Toast
-import com.facebook.react.bridge.LifecycleEventListener
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
-import com.gy.R
 import com.hjq.toast.ToastParams
 import com.hjq.toast.Toaster
-import com.hjq.toast.config.IToastStyle
-import com.orhanobut.logger.Logger
+
 
 class GYToast (reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext){
@@ -40,7 +37,11 @@ class GYToast (reactContext: ReactApplicationContext) :
   @ReactMethod
   fun show(msg:String,duration:Int){
     val params = ToastParams();
-    params.duration = duration == 0 ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG;
+    if(duration == 0){
+      params.duration = Toast.LENGTH_SHORT;
+    }else{
+      params.duration = Toast.LENGTH_LONG;
+    }
     params.crossPageShow = false;
     params.text = msg;
     Toaster.setGravity(Gravity.BOTTOM,0,60)

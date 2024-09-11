@@ -1,8 +1,10 @@
 ## 依赖
 > iOS
-- [Toaster](https://github.com/SVProgressHUD/SVProgressHUD)
-<!-- > Andorid
-- [Toaster](https://github.com/getActivity/Toaster) -->
+- [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)
+> Andorid
+- [DialogX](https://github.com/kongzue/DialogX)
+- [SpinKit](https://github.com/ybq/Android-SpinKit)
+
 
 ## iOS
 ```
@@ -11,6 +13,6 @@
 
 ## Android
 ```
-
+无需配置
 ```
 
